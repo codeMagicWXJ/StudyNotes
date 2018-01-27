@@ -1,2 +1,3 @@
 # StudyNotes
-一些学习笔记
+存放个人关于编程相关的学习笔记
+* git\github
