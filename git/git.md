@@ -41,7 +41,7 @@
    > 版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。
 
 
-   ![ ](https://raw.githubusercontent.com/codeMagicWXJ/StudyNotes/master/pic/gif/0%5B1%5D.jpg)
+   ![ ](https://raw.githubusercontent.com/codeMagicWXJ/StudyNotes/master/pic/git/1.jpg)
 
    分布式：
 
