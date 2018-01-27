@@ -1,5 +1,7 @@
 # git和github总结
 
+> [廖雪峰老师的教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
 ## 1. 什么是git？
 
 > Git是目前世界上最先进的分布式版本控制系统
@@ -91,3 +93,23 @@
 
    clone后面的参数是github上仓库的ssh协议地址
 
+   ![](https://raw.githubusercontent.com/codeMagicWXJ/StudyNotes/master/pic/git/3.jpg)
+
+   ​
+
+3. 添加文件至stage，提交stage中的文件
+
+   ```
+   $ git add readme.txt
+   $ git commit -m "wrote a readme file"
+   ```
+
+4. 查看状态
+
+   ```
+   $ git status
+   ```
+
+5. 版本退回
+
+   ​
