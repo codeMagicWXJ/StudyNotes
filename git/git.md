@@ -68,7 +68,15 @@
 
 
 
-## 3.git的一些命令
+## 3.git工作原理
+
+
+
+
+
+
+
+## 4.git的一些命令
 
 1. git的一些配置指令
 
@@ -112,4 +120,64 @@
 
 5. 版本退回
 
+   首先你要知道有多少个版本，用``git log``查看
+
+   ```
+   $ git log
+   commit 3628164fb26d48395383f8f31179f24e0882e1e0
+   Author: Michael Liao <askxuefeng@gmail.com>
+   Date:   Tue Aug 20 15:11:49 2013 +0800
+
+       append GPL
+   ```
+
+   其中commit后面跟着的是HSA1计算出的序列，作为版本好存在。而退回某一版本指令是``git reset --hard ``
+
+   ```
+   $ git reset --hard 3628164
+   $ git reset --hard HEAD^
+   $ git reset --hard HEAD100
+   ```
+
+   上面展示了3中方式：
+
+   ​	第一种后面参数是版本号，可以不用写全，但要却别其他版本
+
+   ​	第二种参数，HEAD只想当前分支版本，^表示上一个版本，如果是前2个则写^^
+
+   ​	第三种参数，HEAD后面的数字表示前几个版本
+
    ​
+
+6. 撤销修改
+
+   场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令``git checkout -- file``
+
+   ```
+   $ git checkout -- readme.txt
+   ```
+
+   场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令`git reset HEAD file`，就回到了场景1，第二步按场景1操作。
+
+   ```
+   $ git reset HEAD readme.txt
+   $ git checkout -- readme.txt
+   ```
+
+7. 删除文件
+
+   删除文件用``git rm test.txt``
+
+   ```
+   $ git rm test.txt
+   ```
+
+   这句话表示删除工作去中的文件，同时把删除动作提交至缓存区。如果确认删除版本库中的文件用``git commit -m ''remove''``
+
+   ```
+   $ git commit -m "remove test.txt"
+   ```
+
+   这样版本库总的文件才伤处，如果上错了，就执行5，退回到版本库
+
+8. 添加github远程仓库
