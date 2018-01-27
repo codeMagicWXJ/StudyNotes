@@ -181,3 +181,84 @@
    这样版本库总的文件才伤处，如果上错了，就执行5，退回到版本库
 
 8. 添加github远程仓库
+
+   > 第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+
+   ```
+   $ ssh-keygen -t rsa -C "youremail@example.com"
+   ```
+
+   其中id_rsa是私人密钥，暂时不知道怎么用，而用到的是id_rsa,pub公共密钥，把这个密钥告知github
+
+   ![](https://raw.githubusercontent.com/codeMagicWXJ/StudyNotes/master/pic/git/4.jpg)
+
+   ​
+
+   现在你机器和github可以通行了，首先在github中创建一个仓库，然后关联自己的本地仓库，用``git remote add``
+
+   ```
+   $ git remote add origin git@github.com:michaelliao/learngit.git
+   $ git push -u origin master
+   ```
+
+   其中origin是本都对远程仓库的命名，git@github.com:michaelliao/learngit.git是远程仓库的SSH地址
+
+   > 由于远程库是空的，我们第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+   以后每当有什么改动想推送给github那么就使用``git push``
+
+   ````
+   git push origin master
+   ````
+
+   不过当github中出现修改，你首先要接受别人的推送，然后才能推送出去
+
+   ​
+
+9. 创建合并分支
+
+   首先创建一个dev分支
+
+   ```
+   $ git branch dev
+   ```
+
+   然后切换到分支dev
+
+   ```
+   $ git checkout dev
+   ```
+
+   有一个快捷方法，同时具有上述两种操作
+
+   ```
+   $ git checkout -b dev
+   ```
+
+   查看当前有多少分支
+
+   ```
+   $ git branch
+   * dev
+     master
+   ```
+
+   而HEAD指向的分支为当前分支，用*标识
+
+   而合并分支用 ``git merge``命令
+
+   ```
+   $ git merge dev
+   ```
+
+   表示当前分支合并dev分支
+
+   最后删除分支
+
+   ```
+   $ git branch -d dev
+   ```
+
+   ​
+
+   ​
