@@ -10,7 +10,7 @@
 
 那么现在就有两个问题
 
-1. 什么是版本控制
+1. **什么是版本控制**
 
    > 版本控制（Revision control）是一种软体工程技巧，籍以在开发的过程中，确保由不同人所编辑的同一档案都得到更新。
    >
@@ -32,7 +32,7 @@
 
    ​
 
-2. 什么是布式的版本控制系统
+2. **什么是布式的版本控制系统**
 
     说分布式就不得不说集中式,因为分布式出现在集中式之后。
 
@@ -49,14 +49,45 @@
 
    ​	其次，如果不把修改上传到“中央服务器”，每个人怎么知道其他人的进度呢？只需要把自己修改的部分推送给其他人。
 
-   ​	
+   	![](https://raw.githubusercontent.com/codeMagicWXJ/StudyNotes/master/pic/git/2.jpg)
+
+3. **分布之相对于集中式有什么优势呢**
+
+   1.效率高：不用每次开始工作都去中央仓库下载最新版本
+
+   2.安全：集中式如果中央处理器出现问题了，那么就没法干活了。
 
 
 ## 2.git能做什么？
+
+版本控制。
+
+
 
 
 
 ## 3.git的一些命令
 
+1. git的一些配置指令
 
+   ```
+   $ git config --global user.name "Your Name"
+   $ git config --global user.email "email@example.com"
+   ```
+
+2. 创建仓库
+
+   仓库其实就是文件夹，只不过git在该文件夹中创建了 .git 文件夹。只要进入想要成为仓库目录，调用``git init`` 
+
+   ```
+   $ git init
+   ```
+
+   也可以直接用``git clone``命令从其他仓库克隆一份过来，自动成为仓库
+
+   ```
+   $ git clone git@github.com:michaelliao/gitskills.git
+   ```
+
+   clone后面的参数是github上仓库的ssh协议地址
 
